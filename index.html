@@ -1,24 +1,94 @@
+<<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
     <style>
+        /* CSS Styling */
         body {
-            background-color: lightblue;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s ease;
         }
-        h1 {
-            color: navy;
+
+        header {
+            background-color: #333;
+            color: #fff;
             text-align: center;
+            padding: 30px 0;
         }
-        p {
-            font-family: Arial, sans-serif;
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #444;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Simple Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header h1, section {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Dark Mode Styling */
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .dark-mode section {
+            background-color: #444;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-
-<html>
-
 <body>
-  <h1>K3V4L1N</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
 
-</html>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a professional with over [X years] of experience in [Your Industry]. Here are some of the highlights of my career.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <ul>
+            <li><strong>Project 1</strong>
