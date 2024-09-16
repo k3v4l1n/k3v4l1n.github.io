@@ -1,21 +1,22 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Portfolio</title>
     <style>
-        /* CSS Styling */
+        /* CSS Styling with Shades of Blue */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e3f2fd; /* Light blue background */
             margin: 0;
             padding: 0;
             transition: background-color 0.5s ease;
+            color: #0d47a1; /* Deep blue text */
         }
 
         header {
-            background-color: #333;
+            background-color: #1565c0; /* Darker blue */
             color: #fff;
             text-align: center;
             padding: 30px 0;
@@ -26,21 +27,41 @@
             color: #fff;
             padding: 10px 20px;
             margin: 0 5px;
-            background-color: #444;
+            background-color: #1e88e5; /* Medium blue */
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
         nav a:hover {
-            background-color: #555;
+            background-color: #42a5f5; /* Lighter blue on hover */
         }
 
         section {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #ffffff; /* White background for contrast */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #1976d2; /* Border left in medium blue */
+        }
+
+        h2 {
+            color: #0d47a1; /* Same deep blue for headings */
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            background-color: #1976d2; /* Medium blue */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2196f3; /* Lighter blue on hover */
         }
 
         /* Simple Animation */
@@ -59,13 +80,21 @@
 
         /* Dark Mode Styling */
         .dark-mode {
-            background-color: #333;
+            background-color: #0d47a1; /* Dark blue for dark mode */
             color: #fff;
         }
 
         .dark-mode section {
-            background-color: #444;
+            background-color: #1565c0; /* Darker section backgrounds in dark mode */
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode nav a {
+            background-color: #1976d2;
+        }
+
+        .dark-mode button {
+            background-color: #42a5f5; /* Lighter blue for buttons in dark mode */
         }
     </style>
 </head>
@@ -91,4 +120,55 @@
     <section id="portfolio">
         <h2>Portfolio</h2>
         <ul>
-            <li><strong>Project 1</strong>
+            <li><strong>Project 1</strong> – Description of project 1.</li>
+            <li><strong>Project 2</strong> – Description of project 2.</li>
+            <li><strong>Project 3</strong> – Description of project 3.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form onsubmit="return validateForm()">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            alert("Form successfully submitted!");
+            return true;
+        }
+    </script>
+
+</body>
+</html>
+
