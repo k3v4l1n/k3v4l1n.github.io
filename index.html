@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Portfolio</title>
     <style>
-        /* CSS Styling with Shades of Blue */
+        /* CSS Styling with Shades of Blue for Light Mode */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #e3f2fd; /* Light blue background */
             margin: 0;
             padding: 0;
-            transition: background-color 0.5s ease;
+            transition: background-color 0.5s ease, color 0.5s ease;
             color: #0d47a1; /* Deep blue text */
         }
 
@@ -80,21 +80,25 @@
 
         /* Dark Mode Styling */
         .dark-mode {
-            background-color: #0d47a1; /* Dark blue for dark mode */
-            color: #fff;
+            background-color: #121212; /* Black background */
+            color: #e0e0e0; /* Light gray text for contrast */
         }
 
         .dark-mode section {
-            background-color: #1565c0; /* Darker section backgrounds in dark mode */
+            background-color: #1e1e1e; /* Dark gray for sections */
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         }
 
         .dark-mode nav a {
-            background-color: #1976d2;
+            background-color: #333; /* Dark gray for nav links */
         }
 
         .dark-mode button {
-            background-color: #42a5f5; /* Lighter blue for buttons in dark mode */
+            background-color: #444; /* Darker gray for buttons */
+        }
+
+        .dark-mode button:hover {
+            background-color: #666; /* Lighter gray on hover */
         }
     </style>
 </head>
@@ -171,4 +175,3 @@
 
 </body>
 </html>
-
