@@ -5,18 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Portfolio</title>
     <style>
-        /* CSS Styling with Shades of Blue for Light Mode */
+        /* CSS Styling for Profile Photo */
+        .profile-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .profile-container img {
+            border-radius: 50%; /* Circular photo */
+            width: 150px; /* Adjust the width as needed */
+            height: 150px; /* Ensure it's a perfect square */
+            border: 5px solid #1976d2; /* Blue border around the image */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+        }
+
+        /* Basic page styling */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #e3f2fd; /* Light blue background */
+            color: #0d47a1; /* Deep blue text */
             margin: 0;
             padding: 0;
-            transition: background-color 0.5s ease, color 0.5s ease;
-            color: #0d47a1; /* Deep blue text */
         }
 
         header {
-            background-color: #1565c0; /* Darker blue */
+            background-color: #1565c0;
             color: #fff;
             text-align: center;
             padding: 30px 0;
@@ -26,79 +39,17 @@
             text-decoration: none;
             color: #fff;
             padding: 10px 20px;
-            margin: 0 5px;
-            background-color: #1e88e5; /* Medium blue */
+            background-color: #1e88e5;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #42a5f5; /* Lighter blue on hover */
+            margin: 0 5px;
         }
 
         section {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #ffffff; /* White background for contrast */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #1976d2; /* Border left in medium blue */
-        }
-
-        h2 {
-            color: #0d47a1; /* Same deep blue for headings */
-        }
-
-        /* Button styling */
-        button {
-            padding: 10px 20px;
-            background-color: #1976d2; /* Medium blue */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #2196f3; /* Lighter blue on hover */
-        }
-
-        /* Simple Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        header h1, section {
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        /* Dark Mode Styling */
-        .dark-mode {
-            background-color: #121212; /* Black background */
-            color: #e0e0e0; /* Light gray text for contrast */
-        }
-
-        .dark-mode section {
-            background-color: #1e1e1e; /* Dark gray for sections */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-
-        .dark-mode nav a {
-            background-color: #333; /* Dark gray for nav links */
-        }
-
-        .dark-mode button {
-            background-color: #444; /* Darker gray for buttons */
-        }
-
-        .dark-mode button:hover {
-            background-color: #666; /* Lighter gray on hover */
+            background-color: #ffffff;
+            border-left: 5px solid #1976d2;
         }
     </style>
 </head>
@@ -106,7 +57,7 @@
 
     <!-- Header Section -->
     <header>
-        <h1>Welcome to Kris's Portfolio</h1>
+        <h1>Welcome to My Portfolio</h1>
         <nav>
             <a href="#about">About Me</a>
             <a href="#portfolio">Portfolio</a>
@@ -114,10 +65,15 @@
         </nav>
     </header>
 
+    <!-- Profile Photo Section -->
+    <div class="profile-container">
+        <img src="profile-photo.jpg" alt="Profile Photo">
+    </div>
+
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a professional with over [X years] of experience in [Your Industry]. Here are some of the highlights of my career.</p>
+        <p>I am a professional with over [X years] of experience in [Your Industry].</p>
     </section>
 
     <!-- Portfolio Section -->
@@ -133,7 +89,7 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <form onsubmit="return validateForm()">
+        <form>
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name"><br><br>
             <label for="email">Email:</label><br>
@@ -144,34 +100,6 @@
         </form>
     </section>
 
-    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-
-    <script>
-        function toggleDarkMode() {
-            const body = document.body;
-            body.classList.toggle('dark-mode');
-        }
-
-        function validateForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            if (name === "" || email === "" || message === "") {
-                alert("All fields must be filled out");
-                return false;
-            }
-
-            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-            if (!email.match(emailPattern)) {
-                alert("Please enter a valid email address");
-                return false;
-            }
-
-            alert("Form successfully submitted!");
-            return true;
-        }
-    </script>
-
 </body>
 </html>
+
